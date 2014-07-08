@@ -35,14 +35,9 @@
 /* Standalone build */
 #define NO_SYS                          1
 
-// AQUI PARA DEBUG
-#define LWIP_DEBUG					0
-#define TCP_OUTPUT_DEBUG                LWIP_DBG_OFF
-
+//#define LWIP_DEBUG			1
 #define LPC_TX_PBUF_BOUNCE_EN	1
 //#define HTTPD_DEBUG         LWIP_DBG_ON
-
-
 
 /* Use LWIP timers */
 #define NO_SYS_NO_TIMERS                0
@@ -99,17 +94,6 @@
 /* MSS should match the hardware packet size */
 #define TCP_MSS                         1460
 #define TCP_SND_BUF                     (2 * TCP_MSS)
-
-
-//HENRIQUE
-
-
-//ORIGINAL #define TCP_OVERSIZE                    TCP_MSS
-
-
-//ORIGINAL #define TCP_SND_QUEUELEN                ((4 * (TCP_SND_BUF) + (TCP_MSS - 1))/(TCP_MSS))
-
-#define TCP_SND_QUEUELEN                32
 
 #define LWIP_SOCKET                     0
 #define LWIP_NETCONN                    0
