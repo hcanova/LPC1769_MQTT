@@ -115,11 +115,11 @@ uint8_t mqttPublish(Mqtt *this,char* pub_topic, char* msg)
 {
 
 
-    uint8_t var_header_pub[strlen(pub_topic)+3];
+    uint8_t var_header_pub[strlen(pub_topic)+2];
     strcpy((char *)&var_header_pub[2], pub_topic);
     var_header_pub[0] = 0;
     var_header_pub[1] = strlen(pub_topic);
-    var_header_pub[sizeof(var_header_pub)-1] = 0;
+    ////var_header_pub[sizeof(var_header_pub)-1] = 0;
 
     uint8_t fixed_header_pub[] = {MQTTPUBLISH,sizeof(var_header_pub)+strlen(msg)};
 
